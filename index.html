@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Tournament 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="font-sans bg-gray-100">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-gray-800 p-4 text-white fixed top-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">Cricket Tournament 2024</a>
+            <div>
+                <a href="#about" class="mr-6 hover:text-gray-400">About</a>
+                <a href="#formats" class="mr-6 hover:text-gray-400">Formats</a>
+                <a href="#live-scores" class="mr-6 hover:text-gray-400">Live Scores</a>
+                <a href="#schedule" class="hover:text-gray-400">Schedule</a>
+                <button id="openForm" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Register</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="flex items-center justify-center text-white bg-cover bg-center h-screen" style="background-image: url('pics.jpg');">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4">Cricket Tournament 2024</h1>
+            <p class="text-2xl mb-6">T20, ODI, and Test - Watch the Best in Action!</p>
+            <a href="#about" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full">Learn More</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">About the Tournament</h2>
+            <p class="text-xl text-gray-700">The 2024 Cricket Tournament brings together the best teams in the world to compete in T20, ODI, and Test formats. Get ready for action-packed matches, star players, and thrilling moments!</p>
+        </div>
+    </section>
+
+    <!-- Tournament Formats Section -->
+    <section id="formats" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Tournament Formats</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- T20 Format -->
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">T20 Format</h3>
+                    <p class="text-gray-600 mb-4">20 overs per team. High-intensity matches full of quick action and big hits.</p>
+                </div>
+
+                <!-- ODI Format -->
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">ODI Format</h3>
+                    <p class="text-gray-600 mb-4">50 overs per team. A strategic balance between offense and defense.</p>
+                </div>
+
+                <!-- Test Format -->
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Test Format</h3>
+                    <p class="text-gray-600 mb-4">Played over five days, Test cricket is the ultimate test of endurance and skill.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Scores Section -->
+    <section id="live-scores" class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Live Scores</h2>
+            <div id="liveScoreContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Tournament Schedule</h2>
+            <table class="table-auto w-full text-left bg-gray-100 rounded-lg shadow-lg">
+                <thead>
+                    <tr class="bg-blue-500 text-white">
+                        <th class="px-4 py-2">Date</th>
+                        <th class="px-4 py-2">Match</th>
+                        <th class="px-4 py-2">Venue</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleContent">
+                    <!-- Dynamic Content will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <span id="closeForm" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">&times;</span>
+            <h2 class="text-4xl font-bold text-center mb-8">Register for the Tournament</h2>
+            <form id="registrationForm">
+                <label for="format" class="block text-lg mb-2">Cricket Format:</label>
+                <select id="format" class="border w-full p-2 mb-4">
+                    <option value="T20">T20</option>
+                    <option value="ODI">ODI</option>
+                    <option value="Test">Test</option>
+                </select>
+
+                <label for="team" class="block text-lg mb-2">Team Name:</label>
+                <input type="text" id="team" class="border w-full p-2 mb-4">
+
+                <label for="email" class="block text-lg mb-2">Email:</label>
+                <input type="email" id="email" class="border w-full p-2 mb-4">
+
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Cricket Tournament. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
